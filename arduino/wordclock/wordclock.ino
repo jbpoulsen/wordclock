@@ -72,7 +72,7 @@ void loop() {
     lightup(WordMinTen, CRGB::Blue);
     lightup(WordMinutes, CRGB::Blue);
     lightup(WordPast, CRGB::Blue);
-    lightup(WordEleven, CRGB::Blue); 
+    lightup(WordEleven, CRGB::Blue);  
   }
   
   bol = !bol;
