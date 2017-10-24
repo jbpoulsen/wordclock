@@ -50,10 +50,18 @@ void setup() {
   clear();
   Serial.begin(9600);
   FastLED.addLeds<WS2812B, DATA_PIN>(leds, NUM_LEDS);  
-  setBrightness();
+  //setBrightness();
 }
 
 void loop() {
+
+    //setBrightness(20);
+for(int dot = 0; dot < NUM_LEDS; dot++) { 
+    leds[dot] = CRGB::Green;
+  }
+  
+    FastLED.show();
+  /*
   getTime();
   clear();
   delay(1000);
@@ -77,6 +85,8 @@ void loop() {
   
   bol = !bol;
   FastLED.show();
+
+  */
    /* 
   for(int dot = 0; dot < NUM_LEDS; dot++) { 
     Serial.write(dot);
