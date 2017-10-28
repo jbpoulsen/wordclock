@@ -5,7 +5,7 @@
 #define NUM_LEDS 144
 #define DATA_PIN 5
 
-int BRIGHTNESS = 10;
+int BRIGHTNESS = 80;
 CRGB leds[NUM_LEDS];
 tmElements_t tm;
 
@@ -50,17 +50,10 @@ void setup() {
   clear();
   Serial.begin(9600);
   FastLED.addLeds<WS2812B, DATA_PIN>(leds, NUM_LEDS);  
-  //setBrightness();
+  setBrightness();
 }
 
 void loop() {
-
-    //setBrightness(20);
-for(int dot = 0; dot < NUM_LEDS; dot++) { 
-    leds[dot] = CRGB::Green;
-  }
-  
-    FastLED.show();
   /*
   getTime();
   clear();
@@ -87,21 +80,21 @@ for(int dot = 0; dot < NUM_LEDS; dot++) {
   FastLED.show();
 
   */
-   /* 
+   
   for(int dot = 0; dot < NUM_LEDS; dot++) { 
-    Serial.write(dot);
-    setBrightness(20);
     leds[dot] = CRGB::White;
+    leds[dot+1] = CRGB::White;
+    leds[dot+2] = CRGB::White;
+    leds[dot+3] = CRGB::White;
     FastLED.show();
     // clear this led for the next time around the loop
-    //leds[dot] = CRGB::Black;
-    delay(1000);
-    if(dot % 5 == 0)
-    {
-      clear();
-    }
+    leds[dot] = CRGB::Black;
+    leds[dot+1] = CRGB::Black;
+    leds[dot+2] = CRGB::Black;
+    leds[dot+3] = CRGB::Black;
+    delay(500);
   }
-  */
+  
   
 }
 
